@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Say Hello — Luke Chang</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+
+    /* ─── About block ─── */
+    .about-body {
+      font-size: 17px;
+      color: var(--ink-muted);
+      line-height: 1.85;
+      max-width: 620px;
+    }
+    .about-body p { margin-bottom: 20px; }
+    .about-body p:last-child { margin-bottom: 0; }
+
+    /* ─── Fun facts grid ─── */
+    .facts-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 32px;
+    }
+
+    .fact-card {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 22px 24px;
+    }
+
+    .fact-icon { font-size: 22px; margin-bottom: 10px; }
+
+    .fact-label {
+      font-size: 11px; font-weight: 500;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--accent); margin-bottom: 5px;
+    }
+
+    .fact-text {
+      font-size: 15px; color: var(--ink); line-height: 1.55;
+    }
+
+    /* ─── Social / find me links ─── */
+    .social-list {
+      margin-top: 32px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .social-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border);
+      text-decoration: none;
+      transition: all 0.15s;
+    }
+    .social-item:first-child { border-top: 1px solid var(--border); }
+
+    .social-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .social-icon { font-size: 20px; width: 36px; text-align: center; }
+
+    .social-name {
+      font-family: var(--font-head);
+      font-size: 17px; font-weight: 600;
+      color: var(--ink); transition: color 0.15s;
+    }
+
+    .social-handle {
+      font-size: 14px; color: var(--ink-muted); margin-top: 2px;
+    }
+
+    .social-arrow {
+      font-size: 16px; color: var(--border);
+      transition: color 0.15s, transform 0.15s;
+    }
+
+    .social-item:hover .social-name { color: var(--accent); }
+    .social-item:hover .social-arrow { color: var(--accent); transform: translateX(4px); }
+    .social-item:hover { text-decoration: none; }
+
+    /* ─── Email CTA block ─── */
+    .email-block {
+      background: var(--accent);
+      border-radius: 10px;
+      padding: 52px 40px;
+      text-align: center;
+      margin: 48px 0 80px;
+    }
+
+    .email-block h2 {
+      font-family: var(--font-head);
+      font-size: 28px; font-weight: 600;
+      color: #fff; margin-bottom: 12px;
+    }
+
+    .email-block p {
+      font-size: 16px; color: rgba(255,255,255,0.82);
+      line-height: 1.7; margin-bottom: 28px;
+      max-width: 440px; margin-left: auto; margin-right: auto;
+    }
+
+    .btn-white {
+      display: inline-block;
+      padding: 13px 30px;
+      background: #fff; color: var(--accent);
+      border-radius: 4px; font-size: 15px;
+      font-weight: 600; text-decoration: none;
+      transition: background 0.15s;
+    }
+    .btn-white:hover {
+      background: rgba(255,255,255,0.9);
+      text-decoration: none;
+    }
+
+    .email-note {
+      margin-top: 14px;
+      font-size: 13px; color: rgba(255,255,255,0.55);
+    }
+
+    @media (max-width: 620px) {
+      .facts-grid { grid-template-columns: 1fr; }
+      .email-block { padding: 36px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo">Luke Chang</a>
+      <nav>
+        <a href="now.html">Now</a>
+        <a href="photos.html">Photos</a>
+        <a href="projects.html">Projects</a>
+        <a href="blog.html">Blog</a>
+        <a href="work.html" class="active">Say hello</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <!-- Page header -->
+    <div class="page-header">
+      <a href="index.html" class="back-link">← Back home</a>
+      <p class="section-label fade-1">Get to know me</p>
+      <h1 class="page-title fade-2">Say hello</h1>
+      <p class="page-subtitle fade-3">I'm just a guy trying to live faithfully, run far, and write honestly. If something I've made resonated with you — I'd genuinely love to hear from you.</p>
+    </div>
+
+    <!-- Who I am -->
+    <section style="border-top: none;">
+      <p class="section-label">A little about me</p>
+      <h2>Who I am</h2>
+      <div class="about-body fade-2">
+        <p>I'm Luke Chang — a follower of Jesus, a runner, and a writer living in Fairfax, VA. I started this site because I believe there's real value in sharing the honest, unpolished version of life. Not the highlight reel. The actual journey.</p>
+        <p>My days usually start before sunrise with coffee, scripture, and a few miles on the road. Then I write. Then I get to work on whatever I'm building that season. I believe deeply that how you spend your ordinary days is how you spend your life — and I want to be intentional about that.</p>
+        <p>Faith is the center of everything for me. Running keeps me grounded. Writing helps me figure out what I actually think. And this corner of the internet is where all three come together.</p>
+      </div>
+
+      <div class="facts-grid fade-3">
+        <div class="fact-card">
+          <div class="fact-icon">📍</div>
+          <p class="fact-label">Based in</p>
+          <p class="fact-text">Fairfax, Virginia</p>
+        </div>
+        <div class="fact-card">
+          <div class="fact-icon">✝️</div>
+          <p class="fact-label">Faith</p>
+          <p class="fact-text">Christian — my faith shapes everything I do</p>
+        </div>
+        <div class="fact-card">
+          <div class="fact-icon">🏃</div>
+          <p class="fact-label">Currently training for</p>
+          <p class="fact-text">My next marathon — chasing sub-3:30</p>
+        </div>
+        <div class="fact-card">
+          <div class="fact-icon">📖</div>
+          <p class="fact-label">Currently reading</p>
+          <p class="fact-text">The Ruthless Elimination of Hurry</p>
+        </div>
+        <div class="fact-card">
+          <div class="fact-icon">✍️</div>
+          <p class="fact-label">Writing about</p>
+          <p class="fact-text">Faith, running, and building a life on purpose</p>
+        </div>
+        <div class="fact-card">
+          <div class="fact-icon">☀️</div>
+          <p class="fact-label">Best hour of the day</p>
+          <p class="fact-text">5:30am — before the world wakes up</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Find me online -->
+    <section>
+      <p class="section-label">Find me online</p>
+      <h2>Where I hang out</h2>
+      <div class="social-list fade-3">
+
+        <a href="#" class="social-item">
+          <div class="social-left">
+            <span class="social-icon">📸</span>
+            <div>
+              <p class="social-name">Instagram</p>
+              <p class="social-handle">@lukehackslife — daily life, running, and faith</p>
+            </div>
+          </div>
+          <span class="social-arrow">→</span>
+        </a>
+
+        <a href="#" class="social-item">
+          <div class="social-left">
+            <span class="social-icon">▶️</span>
+            <div>
+              <p class="social-name">YouTube</p>
+              <p class="social-handle">Long-form videos on faith, growth, and the honest side of life</p>
+            </div>
+          </div>
+          <span class="social-arrow">→</span>
+        </a>
+
+        <a href="blog.html" class="social-item">
+          <div class="social-left">
+            <span class="social-icon">✍️</span>
+            <div>
+              <p class="social-name">The Blog</p>
+              <p class="social-handle">Essays on running, faith, and the long race</p>
+            </div>
+          </div>
+          <span class="social-arrow">→</span>
+        </a>
+
+        <a href="#" class="social-item">
+          <div class="social-left">
+            <span class="social-icon">📬</span>
+            <div>
+              <p class="social-name">Newsletter</p>
+              <p class="social-handle">Every Thursday — one idea worth sitting with</p>
+            </div>
+          </div>
+          <span class="social-arrow">→</span>
+        </a>
+
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Email CTA -->
+  <div class="container">
+    <div class="email-block fade-4">
+      <h2>Just want to say hi?</h2>
+      <p>My inbox is open. Whether something I wrote resonated with you, you have a question, or you just want to connect — send me an email. I read every single one.</p>
+      <a href="mailto:luke@lukehackslife.com" class="btn-white">Send me an email →</a>
+      <p class="email-note">luke@lukehackslife.com &nbsp;·&nbsp; I usually reply within a day or two</p>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <span>© 2026 Luke Chang</span>
+      <div class="footer-links">
+        <a href="https://www.instagram.com/lukehackslife/">Instagram</a>
+        <a href="https://www.linkedin.com/in/luke-chang-702254184/">Linked In</a>
+        <a href="mailto:luke@lukehackslife.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
