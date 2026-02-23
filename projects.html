@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects — Luke Chang</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .project-full {
+      padding: 48px 0;
+      border-top: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: 1fr 260px;
+      gap: 48px;
+      align-items: start;
+    }
+    .project-full:first-of-type { border-top: none; }
+
+    .project-tag {
+      display: inline-block;
+      font-size: 11px; font-weight: 500;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--accent); background: var(--accent-light);
+      border-radius: 3px; padding: 2px 8px;
+      margin-bottom: 14px;
+    }
+
+    .project-full-title {
+      font-family: var(--font-head);
+      font-size: 24px; font-weight: 600;
+      letter-spacing: -0.02em; color: var(--ink);
+      margin-bottom: 14px;
+    }
+
+    .project-full p {
+      font-size: 16px; color: var(--ink-muted);
+      line-height: 1.75; margin-bottom: 14px;
+    }
+    .project-full p:last-of-type { margin-bottom: 0; }
+
+    .project-link-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      border: 1.5px solid var(--accent);
+      color: var(--accent);
+      border-radius: 4px;
+      font-size: 14px; font-weight: 500;
+      transition: all 0.15s;
+    }
+    .project-link-btn:hover {
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .project-sidebar {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px;
+      font-size: 14px;
+    }
+    .sidebar-row {
+      display: flex; flex-direction: column;
+      gap: 2px; margin-bottom: 16px;
+    }
+    .sidebar-row:last-child { margin-bottom: 0; }
+    .sidebar-label {
+      font-size: 11px; font-weight: 500;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--accent);
+    }
+    .sidebar-value { color: var(--ink-muted); line-height: 1.5; }
+
+    .status-dot {
+      display: inline-block;
+      width: 7px; height: 7px;
+      background: #22c55e;
+      border-radius: 50%;
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+    .status-dot.paused { background: var(--ink-muted); }
+
+    @media (max-width: 620px) {
+      .project-full {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .project-sidebar { order: -1; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo">Luke Chang</a>
+      <nav>
+        <a href="now.html">Now</a>
+        <a href="photos.html">Photos</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="blog.html">Blog</a>
+        <a href="work.html">Work with me</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="page-header">
+      <a href="index.html" class="back-link">← Back home</a>
+      <p class="section-label fade-1">Things I've built</p>
+      <h1 class="page-title fade-2">Projects</h1>
+      <p class="page-subtitle fade-3">Everything I'm actively building, writing, or running — and the story behind each one.</p>
+    </div>
+
+    <section style="padding-top: 48px; border-top: none;">
+
+      <!-- Project 1 -->
+      <div class="project-full fade-2">
+        <div>
+          <span class="project-tag">Business</span>
+          <h2 class="project-full-title">LukeHacksLife LLC</h2>
+          <p>My personal brand and consulting practice, based out of Fairfax, VA. I started this because I kept getting asked the same question: "How do I get more people to notice what I'm building?" And I realized I had a real answer — built from years of trial, error, and honest study.</p>
+          <p>I work with solopreneurs and small teams on brand clarity, content strategy, and the kind of marketing that doesn't make you feel like a salesperson. My goal is to help people build audiences without losing who they are in the process.</p>
+          <p>The name comes from a simple belief: you can hack the process of building a life you love. Not shortcuts — just smarter approaches and honest effort.</p>
+          <a href="work.html" class="project-link-btn">Work with me →</a>
+        </div>
+        <div class="project-sidebar">
+          <div class="sidebar-row">
+            <span class="sidebar-label">Status</span>
+            <span class="sidebar-value"><span class="status-dot"></span>Active</span>
+          </div>
+          <div class="sidebar-row">
+            <span class="sidebar-label">Location</span>
+            <span class="sidebar-value">Fairfax, VA</span>
+          </div>
+          <div class="sidebar-row">
+            <span class="sidebar-label">Started</span>
+            <span class="sidebar-value">2023</span>
+          </div>
+          <div class="sidebar-row">
+            <span class="sidebar-label">Focus</span>
+            <span class="sidebar-value">Personal brand, content marketing, small business growth</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-full fade-3">
+        <div>
+          <span class="project-tag">Content</span>
+          <h2 class="project-full-title">YouTube Channel</h2>
+          <p>Long-form videos about faith, personal development, and the unglamorous side of building something on your own. No production crew, no studio — just a camera, good lighting, and an honest take.</p>
+          <p>I started the channel because I was tired of business content that only showed the wins. My most-watched videos tend to be the ones where I admit something didn't work. There's an audience for real.</p>
+          <p>My goal is to publish consistently and build the channel as a place people come when they need to feel less alone in the grind.</p>
+          <a href="#" class="project-link-btn">Watch on YouTube →</a>
+        </div>
+        <div class="project-sidebar">
+          <div class="sidebar-row">
+            <span class="sidebar-label">Status</span>
+            <span class="sidebar-value"><span class="status-dot"></span>Active</span>
+          </div>
+          <div class="sidebar-row">
+            <span class="sidebar-label">Platform</span>
+            <span class="sidebar-value">YouTube</span>
+          </div>
+          <div class="sidebar-row">
+            <span class="sidebar-label">Cadence</span>
+            <span class="sidebar-value">2× per month</span>
+          </div>
+          <div class="sidebar-row">
+            <span class="sidebar-label">Topics</span>
+            <span class="sidebar-value">Faith, business, personal growth</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="project-full fade-3">
+        <div>
+          <span class="project-tag">Writing</span>
+          <h2 class="project-full-title">The Newsletter</h2>
+          <p>A weekly email sent every Thursday. It's for people who are building something — a business, a life, a faith — and need one grounded idea to sit with before the weekend.</p>
+          <p>Each issue has three parts: one thing I'm thinking about, one thing I'm reading, and one thing worth doing this week. Short enough to read in 4 minutes. Dense enough to be worth it.</p>
+          <p>Subscribe if you want the kind of email that doesn't feel like noise.</p>
+          <a href="#" class="project-link-btn">Subscribe free →</a>
+        </div>
+        <div class="project-sidebar">
+          <div class="sidebar-row">
+            <span class="sidebar-label">Status</span>
+            <span class="sidebar-value"><span class="status-dot"></span>Active</span>
+          </div>
+          <div class="sidebar-row">
+            <span class="sidebar-label">Frequency</span>
+            <span class="sidebar-value">Every Thursday</span>
+          </div>
+          <div class="sidebar-row">
+            <span class="sidebar-label">Platform</span>
+            <span class="sidebar-value">Email (Beehiiv)</span>
+          </div>
+          <div class="sidebar-row">
+            <span class="sidebar-label">Cost</span>
+            <span class="sidebar-value">Free</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="project-full fade-4">
+        <div>
+          <span class="project-tag">Running</span>
+          <h2 class="project-full-title">The Long Race</h2>
+          <p>A passion project I started to document my marathon training — but it became something else. It's really about what the long race teaches you: patience, grit, showing up when you don't feel like it, and finding meaning in something that has no shortcut.</p>
+          <p>I write race reports, training reflections, and occasional pieces on how distance running has reshaped my faith and how I think about building a business. It's niche, and I love that.</p>
+          <a href="blog.html" class="project-link-btn">Read the posts →</a>
+        </div>
+        <div class="project-sidebar">
+          <div class="sidebar-row">
+            <span class="sidebar-label">Status</span>
+            <span class="sidebar-value"><span class="status-dot"></span>Active</span>
+          </div>
+          <div class="sidebar-row">
+            <span class="sidebar-label">Format</span>
+            <span class="sidebar-value">Blog posts & essays</span>
+          </div>
+          <div class="sidebar-row">
+            <span class="sidebar-label">Goal</span>
+            <span class="sidebar-value">Sub-3:30 marathon in 2026</span>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <span>© 2026 Luke Chang</span>
+      <div class="footer-links">
+        <a href="#">Instagram</a>
+        <a href="#">YouTube</a>
+        <a href="mailto:luke@lukehackslife.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

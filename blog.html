@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog — Luke Chang</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .filter-bar {
+      display: flex; gap: 8px; flex-wrap: wrap; margin: 28px 0 0;
+    }
+    .filter-btn {
+      padding: 6px 14px; border-radius: 20px;
+      font-size: 13px; font-weight: 500;
+      border: 1.5px solid var(--border);
+      background: transparent; color: var(--ink-muted);
+      cursor: pointer; transition: all 0.15s;
+      font-family: var(--font-body);
+    }
+    .filter-btn:hover, .filter-btn.active {
+      border-color: var(--accent);
+      color: var(--accent); background: var(--accent-light);
+    }
+
+    .posts-section { padding: 48px 0; border-top: none; }
+
+    .post-item {
+      padding: 28px 0;
+      border-bottom: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: start;
+    }
+    .post-item:first-child { border-top: 1px solid var(--border); }
+
+    .post-tag {
+      display: inline-block;
+      font-size: 11px; font-weight: 500;
+      text-transform: uppercase; letter-spacing: 0.09em;
+      color: var(--accent); background: var(--accent-light);
+      border-radius: 3px; padding: 1px 7px;
+      margin-bottom: 8px;
+    }
+
+    .post-title {
+      font-family: var(--font-head);
+      font-size: 20px; font-weight: 600;
+      color: var(--ink); text-decoration: none;
+      letter-spacing: -0.01em; line-height: 1.3;
+      display: block; margin-bottom: 8px;
+      transition: color 0.15s;
+    }
+    .post-title:hover { color: var(--accent); text-decoration: none; }
+
+    .post-meta { font-size: 13px; color: var(--ink-muted); margin-bottom: 8px; }
+
+    .post-excerpt {
+      font-size: 15px; color: var(--ink-muted); line-height: 1.65;
+    }
+
+    .post-read-link {
+      font-size: 13px; color: var(--accent);
+      font-weight: 500; white-space: nowrap;
+      margin-top: 4px;
+    }
+    .post-read-link:hover { text-decoration: underline; }
+
+    .post-date-col {
+      text-align: right;
+      font-size: 13px; color: var(--ink-muted);
+      padding-top: 4px; flex-shrink: 0;
+    }
+
+    .newsletter-cta {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 28px 32px;
+      margin: 48px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .cta-text h3 {
+      font-family: var(--font-head);
+      font-size: 18px; font-weight: 600;
+      color: var(--ink); margin-bottom: 4px;
+    }
+    .cta-text p { font-size: 14px; color: var(--ink-muted); }
+
+    @media (max-width: 620px) {
+      .post-item { grid-template-columns: 1fr; gap: 0; }
+      .post-date-col { text-align: left; margin-bottom: 4px; }
+      .newsletter-cta { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo">Luke Chang</a>
+      <nav>
+        <a href="now.html">Now</a>
+        <a href="photos.html">Photos</a>
+        <a href="projects.html">Projects</a>
+        <a href="blog.html" class="active">Blog</a>
+        <a href="work.html">Work with me</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="page-header">
+      <a href="index.html" class="back-link">← Back home</a>
+      <p class="section-label fade-1">Writing</p>
+      <h1 class="page-title fade-2">Blog</h1>
+      <p class="page-subtitle fade-3">Honest essays on faith, business, running, and the slow work of building a life worth living.</p>
+      <div class="filter-bar fade-4">
+        <button class="filter-btn active">All</button>
+        <button class="filter-btn">Faith &amp; Life</button>
+        <button class="filter-btn">Marketing</button>
+        <button class="filter-btn">Running</button>
+        <button class="filter-btn">Business</button>
+      </div>
+    </div>
+
+    <section class="posts-section">
+
+      <article class="post-item fade-2">
+        <div>
+          <span class="post-tag">Faith &amp; Life</span>
+          <a href="blog-post.html" class="post-title">When the Pace Feels Wrong — Trust the Process Anyway</a>
+          <p class="post-meta">Jan 18, 2026 · 6 min read</p>
+          <p class="post-excerpt">Some seasons are slow on purpose. Here's what training for a marathon taught me about trusting God's timing in business — and why the gap between effort and results is often where character is built.</p>
+          <a href="blog-post.html" class="post-read-link">Read post →</a>
+        </div>
+        <div class="post-date-col">Jan 18</div>
+      </article>
+
+      <article class="post-item fade-3">
+        <div>
+          <span class="post-tag">Marketing</span>
+          <a href="blog-post.html" class="post-title">The Simplest Personal Brand Advice I've Ever Given</a>
+          <p class="post-meta">Dec 28, 2025 · 4 min read</p>
+          <p class="post-excerpt">You don't need a niche, a logo, or a content calendar on day one. You need one thing: a clear point of view you can repeat for years. Here's how to find it.</p>
+          <a href="blog-post.html" class="post-read-link">Read post →</a>
+        </div>
+        <div class="post-date-col">Dec 28</div>
+      </article>
+
+      <article class="post-item fade-3">
+        <div>
+          <span class="post-tag">Faith &amp; Life</span>
+          <a href="blog-post.html" class="post-title">A Year of Running the Long Race</a>
+          <p class="post-meta">Dec 12, 2025 · 7 min read</p>
+          <p class="post-excerpt">Reflections on what it means to keep going — in miles, in faith, and in business — when the finish line isn't visible yet. A year-end essay on endurance.</p>
+          <a href="blog-post.html" class="post-read-link">Read post →</a>
+        </div>
+        <div class="post-date-col">Dec 12</div>
+      </article>
+
+      <article class="post-item fade-4">
+        <div>
+          <span class="post-tag">Business</span>
+          <a href="blog-post.html" class="post-title">Why I Stopped Trying to Scale and Started Trying to Serve</a>
+          <p class="post-meta">Nov 30, 2025 · 5 min read</p>
+          <p class="post-excerpt">The best business advice I received had nothing to do with funnels or frameworks. It was: go deeper with fewer people. Here's what changed when I actually tried it.</p>
+          <a href="blog-post.html" class="post-read-link">Read post →</a>
+        </div>
+        <div class="post-date-col">Nov 30</div>
+      </article>
+
+      <article class="post-item fade-4">
+        <div>
+          <span class="post-tag">Running</span>
+          <a href="blog-post.html" class="post-title">What Mile 18 Teaches You About Quitting</a>
+          <p class="post-meta">Nov 10, 2025 · 5 min read</p>
+          <p class="post-excerpt">Mile 18 is where every marathon gets real. It's also where I learned the most about myself — and about the kind of person I want to become. A race report and a life lesson.</p>
+          <a href="blog-post.html" class="post-read-link">Read post →</a>
+        </div>
+        <div class="post-date-col">Nov 10</div>
+      </article>
+
+      <article class="post-item fade-5">
+        <div>
+          <span class="post-tag">Faith &amp; Life</span>
+          <a href="blog-post.html" class="post-title">The Discipline of Showing Up When It Doesn't Count</a>
+          <p class="post-meta">Oct 22, 2025 · 4 min read</p>
+          <p class="post-excerpt">Most of the work happens when no one is watching. That's not a problem — it's the point. A reflection on faithfulness in small things.</p>
+          <a href="blog-post.html" class="post-read-link">Read post →</a>
+        </div>
+        <div class="post-date-col">Oct 22</div>
+      </article>
+
+    </section>
+
+    <div class="newsletter-cta">
+      <div class="cta-text">
+        <h3>Get new posts by email</h3>
+        <p>Every Thursday — one idea, one read, one thing worth doing. No noise.</p>
+      </div>
+      <a href="#" class="btn btn-primary" style="white-space:nowrap;">Subscribe free</a>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <span>© 2026 Luke Chang</span>
+      <div class="footer-links">
+        <a href="#">Instagram</a>
+        <a href="#">YouTube</a>
+        <a href="mailto:luke@lukehackslife.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
+  </script>
+
+</body>
+</html>

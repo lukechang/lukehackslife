@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>When the Pace Feels Wrong — Luke Chang</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .post-header { padding: 56px 0 40px; border-bottom: 1px solid var(--border); }
+
+    .post-tag {
+      display: inline-block;
+      font-size: 11px; font-weight: 500;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--accent); background: var(--accent-light);
+      border-radius: 3px; padding: 2px 8px; margin-bottom: 18px;
+    }
+
+    .post-h1 {
+      font-family: var(--font-head);
+      font-size: clamp(26px, 5vw, 38px);
+      font-weight: 600; letter-spacing: -0.02em;
+      line-height: 1.2; color: var(--ink); margin-bottom: 18px;
+    }
+
+    .post-byline {
+      display: flex; align-items: center; gap: 12px;
+      font-size: 14px; color: var(--ink-muted);
+    }
+    .byline-dot { color: var(--border); }
+
+    /* ─── Article body ─── */
+    .post-body { padding: 52px 0 64px; max-width: 660px; }
+
+    .post-body p {
+      font-size: 17px; line-height: 1.8;
+      color: var(--ink); margin-bottom: 24px;
+    }
+    .post-body p:last-child { margin-bottom: 0; }
+
+    .post-body h2 {
+      font-family: var(--font-head);
+      font-size: 22px; font-weight: 600;
+      letter-spacing: -0.01em; color: var(--ink);
+      margin: 40px 0 16px;
+    }
+
+    .post-body h3 {
+      font-family: var(--font-head);
+      font-size: 18px; font-weight: 600;
+      color: var(--ink); margin: 32px 0 12px;
+    }
+
+    .post-body blockquote {
+      border-left: 3px solid var(--accent);
+      padding: 4px 0 4px 24px;
+      margin: 32px 0;
+      font-family: var(--font-head);
+      font-style: italic;
+      font-size: 19px; line-height: 1.65;
+      color: var(--ink-muted);
+    }
+
+    .post-body ul {
+      margin: 0 0 24px 0;
+      padding-left: 0;
+      list-style: none;
+      display: flex; flex-direction: column; gap: 10px;
+    }
+    .post-body ul li {
+      font-size: 17px; line-height: 1.75; color: var(--ink);
+      padding-left: 20px; position: relative;
+    }
+    .post-body ul li::before {
+      content: '—'; position: absolute; left: 0; color: var(--accent);
+    }
+
+    .post-divider {
+      text-align: center; color: var(--ink-muted);
+      letter-spacing: 0.3em; font-size: 14px;
+      margin: 40px 0; user-select: none;
+    }
+
+    /* ─── Post footer ─── */
+    .post-footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 0 64px;
+    }
+
+    .post-footer-label {
+      font-size: 11px; font-weight: 500;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--accent); margin-bottom: 24px;
+    }
+
+    .related-posts { display: flex; flex-direction: column; gap: 0; }
+    .related-item {
+      display: flex; justify-content: space-between;
+      align-items: baseline; gap: 16px;
+      padding: 16px 0; border-bottom: 1px solid var(--border);
+    }
+    .related-item:first-child { border-top: 1px solid var(--border); }
+    .related-title {
+      font-family: var(--font-head); font-size: 16px;
+      font-weight: 600; color: var(--ink); text-decoration: none;
+      transition: color 0.15s;
+    }
+    .related-title:hover { color: var(--accent); text-decoration: none; }
+    .related-meta { font-size: 13px; color: var(--ink-muted); white-space: nowrap; }
+
+    .author-block {
+      background: var(--bg-alt); border: 1px solid var(--border);
+      border-radius: 8px; padding: 24px 28px;
+      display: flex; gap: 20px; align-items: flex-start;
+      margin-top: 40px;
+    }
+    .author-avatar {
+      width: 52px; height: 52px; border-radius: 50%;
+      background: var(--border); flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-head); font-size: 18px;
+      font-weight: 600; color: var(--ink-muted);
+    }
+    .author-name {
+      font-family: var(--font-head); font-size: 16px;
+      font-weight: 600; color: var(--ink); margin-bottom: 4px;
+    }
+    .author-bio { font-size: 14px; color: var(--ink-muted); line-height: 1.6; }
+
+    @media (max-width: 620px) {
+      .related-item { flex-direction: column; gap: 4px; }
+      .author-block { flex-direction: column; gap: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo">Luke Chang</a>
+      <nav>
+        <a href="now.html">Now</a>
+        <a href="photos.html">Photos</a>
+        <a href="projects.html">Projects</a>
+        <a href="blog.html" class="active">Blog</a>
+        <a href="work.html">Work with me</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="post-header">
+      <a href="blog.html" class="back-link">← All posts</a>
+      <span class="post-tag fade-1">Faith &amp; Life</span>
+      <h1 class="post-h1 fade-2">When the Pace Feels Wrong — Trust the Process Anyway</h1>
+      <div class="post-byline fade-3">
+        <span>Luke Chang</span>
+        <span class="byline-dot">·</span>
+        <span>January 18, 2026</span>
+        <span class="byline-dot">·</span>
+        <span>6 min read</span>
+      </div>
+    </div>
+
+    <article class="post-body fade-3">
+
+      <p>There's a moment in every long training run — usually somewhere between miles 12 and 14 — where the effort stops feeling proportional to the output. Your legs are working. Your breathing is controlled. But you feel slower than you should. Like the pace is wrong.</p>
+
+      <p>Last October, I was in the middle of a 16-mile long run when I hit that wall. I checked my watch. I was two minutes per mile slower than my goal race pace. Two minutes. I did the math in my head — I was going to miss my time. And I had six weeks left to train.</p>
+
+      <p>What happened next is what this essay is really about.</p>
+
+      <h2>The gap between effort and results</h2>
+
+      <p>I've been running seriously for four years. In that time I've learned that the hardest part isn't the physical training — it's the psychological discipline of trusting a process that doesn't show you immediate results.</p>
+
+      <p>You run 50 miles in a week and your race pace doesn't budge. You eat right, sleep eight hours, foam roll, do the drills. And for weeks, nothing seems to change. Then one day, six weeks later, you line up at a race and something has shifted. Your body absorbed the training. But you had to trust it through the silence.</p>
+
+      <blockquote>"The gap between effort and results isn't a sign that something is wrong. It's where the real work happens."</blockquote>
+
+      <p>I've been thinking about this a lot in the context of business and faith. Because the same dynamic shows up everywhere.</p>
+
+      <h2>What this looks like in business</h2>
+
+      <p>When I started publishing content consistently — the blog, the newsletter, the YouTube channel — I expected some kind of compounding return in the first 90 days. That's what everyone promises, right? Consistency compounds. Show up, and the audience will come.</p>
+
+      <p>The first 90 days were quiet. Then the next 90. I was getting better at writing, I could feel it. But the external results weren't reflecting the internal growth. The pace felt wrong.</p>
+
+      <p>Here's what I've learned:</p>
+
+      <ul>
+        <li>Compounding works, but it doesn't work on your timeline.</li>
+        <li>The audience you're building right now is often invisible to you — they're reading, watching, but not commenting.</li>
+        <li>The gap between input and output in creative work is longer than the gap in physical training. Sometimes years longer.</li>
+      </ul>
+
+      <p>That's hard to sit with. Especially when you have rent, a business to run, and an Instagram feed full of people who seem to have figured it out faster than you.</p>
+
+      <h2>The faith angle</h2>
+
+      <p>I'm a Christian, and I've found that running has become one of the most honest theological classrooms in my life. Not in a forced way — I don't listen to sermons on my long runs. But there's something about sustained effort in silence that strips away the noise and makes certain things undeniably clear.</p>
+
+      <p>The pace that felt wrong on that October run was exactly the right pace. My coach had prescribed it as a "comfortable long run" — not a tempo run, not a race simulation. I had been comparing it to my race pace, which was the wrong benchmark entirely.</p>
+
+      <p>I wonder how often I do that spiritually. Compare the pace of my sanctification to someone else's visible transformation. Or measure a season of slow, quiet faithfulness against someone else's visible breakthrough.</p>
+
+      <div class="post-divider">· · ·</div>
+
+      <p>I finished that training cycle and ran a personal best by four minutes. Not because the pace ever felt right during training — but because I stopped requiring it to feel right and started trusting what I'd been told was true.</p>
+
+      <p>The pace isn't wrong. You're just early.</p>
+
+      <p>Show up anyway.</p>
+
+    </article>
+
+    <div class="post-footer">
+      <p class="post-footer-label">More posts</p>
+      <div class="related-posts">
+        <div class="related-item">
+          <a href="blog-post.html" class="related-title">A Year of Running the Long Race</a>
+          <span class="related-meta">Dec 12, 2025</span>
+        </div>
+        <div class="related-item">
+          <a href="blog-post.html" class="related-title">What Mile 18 Teaches You About Quitting</a>
+          <span class="related-meta">Nov 10, 2025</span>
+        </div>
+        <div class="related-item">
+          <a href="blog-post.html" class="related-title">The Discipline of Showing Up When It Doesn't Count</a>
+          <span class="related-meta">Oct 22, 2025</span>
+        </div>
+      </div>
+
+      <div class="author-block">
+        <div class="author-avatar">LC</div>
+        <div>
+          <p class="author-name">Luke Chang</p>
+          <p class="author-bio">Follower of Jesus, writer, and marketer based in Fairfax, VA. I write about faith, running, and building a business without losing yourself. <a href="work.html">Work with me</a> or <a href="blog.html">read more posts</a>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <span>© 2026 Luke Chang</span>
+      <div class="footer-links">
+        <a href="#">Instagram</a>
+        <a href="#">YouTube</a>
+        <a href="mailto:luke@lukehackslife.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

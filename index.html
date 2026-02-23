@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luke Chang — Follower of Jesus, writer, and marketer.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ─── Hero ─── */
+    .hero { padding: 88px 0 80px; border-top: none; }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 48px;
+      align-items: center;
+    }
+    .hero-eyebrow {
+      font-size: 12px; font-weight: 500;
+      text-transform: uppercase; letter-spacing: 0.12em;
+      color: var(--accent); margin-bottom: 18px;
+    }
+    .hero-name {
+      font-family: var(--font-head);
+      font-size: clamp(36px, 6vw, 52px);
+      font-weight: 600; line-height: 1.1;
+      letter-spacing: -0.02em; margin-bottom: 14px;
+    }
+    .hero-tagline {
+      font-size: 18px; font-weight: 300;
+      color: var(--ink-muted); margin-bottom: 10px;
+      font-style: italic; font-family: var(--font-head);
+    }
+    .hero-sub {
+      font-size: 16px; color: var(--ink-muted);
+      max-width: 460px; margin-bottom: 32px; line-height: 1.7;
+    }
+    .btn-group { display: flex; gap: 12px; flex-wrap: wrap; }
+    .hero-photo {
+      width: 128px; height: 128px; border-radius: 50%;
+      background: var(--bg-alt); border: 2px solid var(--border);
+      flex-shrink: 0; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .hero-photo-initials {
+      font-family: var(--font-head); font-size: 36px;
+      font-weight: 600; color: var(--ink-muted);
+    }
+
+    /* ─── Preview Cards ─── */
+    .preview-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 28px;
+    }
+    .preview-card {
+      display: block;
+      padding: 22px;
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      text-decoration: none;
+      transition: border-color 0.15s, transform 0.15s;
+    }
+    .preview-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+      text-decoration: none;
+    }
+    .preview-card-label {
+      font-size: 11px; font-weight: 500;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--accent); margin-bottom: 6px;
+    }
+    .preview-card-title {
+      font-family: var(--font-head);
+      font-size: 16px; font-weight: 600;
+      color: var(--ink); margin-bottom: 6px;
+    }
+    .preview-card-desc {
+      font-size: 13px; color: var(--ink-muted); line-height: 1.55;
+    }
+    .preview-card-arrow {
+      display: inline-block; margin-top: 12px;
+      font-size: 13px; color: var(--accent); font-weight: 500;
+    }
+
+    /* ─── Now preview ─── */
+    .now-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 48px; margin-top: 32px;
+    }
+    .now-grid p { color: var(--ink-muted); font-size: 16px; line-height: 1.75; }
+    .now-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+    .now-list li {
+      font-size: 16px; line-height: 1.6; color: var(--ink);
+      padding-left: 18px; position: relative;
+    }
+    .now-list li::before {
+      content: '—'; position: absolute; left: 0;
+      color: var(--accent); font-weight: 300;
+    }
+
+    /* ─── Blog preview ─── */
+    .post-list { margin-top: 28px; display: flex; flex-direction: column; }
+    .post-item { padding: 22px 0; border-bottom: 1px solid var(--border); }
+    .post-item:first-child { border-top: 1px solid var(--border); }
+    .post-title {
+      font-family: var(--font-head); font-size: 18px; font-weight: 600;
+      color: var(--ink); text-decoration: none; letter-spacing: -0.01em;
+      transition: color 0.15s;
+    }
+    .post-title:hover { color: var(--accent); text-decoration: none; }
+    .post-meta { font-size: 13px; color: var(--ink-muted); margin: 5px 0 8px; }
+    .post-excerpt { font-size: 15px; color: var(--ink-muted); line-height: 1.65; }
+    .view-all {
+      display: inline-block; margin-top: 20px;
+      font-size: 14px; font-weight: 500; color: var(--accent);
+    }
+
+    /* ─── Work with me ─── */
+    .contact-section {
+      background: var(--bg-alt); border-top: 1px solid var(--border); padding: 80px 0;
+    }
+    .work-list { list-style: none; margin: 18px 0 28px; display: flex; flex-direction: column; gap: 10px; }
+    .work-list li { font-size: 16px; color: var(--ink-muted); padding-left: 18px; position: relative; }
+    .work-list li::before { content: '→'; position: absolute; left: 0; color: var(--accent); }
+    .contact-aside { margin-top: 18px; font-size: 14px; color: var(--ink-muted); }
+    .contact-aside a { color: var(--ink-muted); text-decoration: underline; }
+    .contact-aside a:hover { color: var(--ink); }
+
+    @media (max-width: 620px) {
+      .hero { padding: 56px 0; }
+      .hero-inner { grid-template-columns: 1fr; gap: 32px; }
+      .hero-photo { width: 96px; height: 96px; order: -1; }
+      .hero-photo-initials { font-size: 28px; }
+      .now-grid { grid-template-columns: 1fr; gap: 28px; }
+      .preview-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo">Luke Chang</a>
+      <nav>
+        <a href="now.html">Now</a>
+        <a href="photos.html">Photos</a>
+        <a href="projects.html">Projects</a>
+        <a href="blog.html">Blog</a>
+        <a href="work.html">Work with me</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <div class="container">
+    <section class="hero" style="border-top:none;">
+      <div class="hero-inner">
+        <div>
+          <p class="hero-eyebrow fade-1">lukehackslife.com</p>
+          <h1 class="hero-name fade-2">Luke Chang</h1>
+          <p class="hero-tagline fade-3">Follower of Jesus, writer, and marketer.</p>
+          <p class="hero-sub fade-4">I share honest stories and lessons on faith, business, and running the long race.</p>
+          <div class="btn-group fade-5">
+            <a href="blog.html" class="btn btn-primary">Read the blog</a>
+            <a href="work.html" class="btn btn-ghost">Say hi</a>
+          </div>
+        </div>
+        <div class="hero-photo fade-2">
+          <span class="hero-photo-initials">LC</span>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Now preview -->
+  <div class="container">
+    <section id="now">
+      <p class="section-label">Present tense</p>
+      <h2>What I'm doing now</h2>
+      <div class="now-grid">
+        <div>
+          <p>I'm in a season of building slowly and intentionally — growing a business I believe in, staying consistent with writing, and trying to show up faithfully in every small corner of life.</p>
+        </div>
+        <div>
+          <ul class="now-list">
+            <li>Running LukeHacksLife LLC in Fairfax, VA.</li>
+            <li>Helping people grow their personal brands and businesses.</li>
+            <li>Training for my next marathon and trying to make each day a masterpiece.</li>
+          </ul>
+        </div>
+      </div>
+      <a href="now.html" class="view-all">Read the full now page →</a>
+    </section>
+  </div>
+
+  <!-- Section cards: Photos & Projects -->
+  <div class="container">
+    <section>
+      <p class="section-label">Explore</p>
+      <h2>More from me</h2>
+      <div class="preview-grid">
+        <a href="photos.html" class="preview-card">
+          <p class="preview-card-label">Life in frames</p>
+          <p class="preview-card-title">Photos</p>
+          <p class="preview-card-desc">A visual journal — running, faith, morning routines, and moments worth keeping.</p>
+          <span class="preview-card-arrow">Browse photos →</span>
+        </a>
+        <a href="projects.html" class="preview-card">
+          <p class="preview-card-label">Things I've built</p>
+          <p class="preview-card-title">Projects</p>
+          <p class="preview-card-desc">From consulting to content to newsletters — here's what I'm actively working on.</p>
+          <span class="preview-card-arrow">See projects →</span>
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <!-- Blog preview -->
+  <div class="container">
+    <section id="blog">
+      <p class="section-label">Writing</p>
+      <h2>Latest posts</h2>
+      <div class="post-list">
+        <article class="post-item">
+          <a href="blog-post.html" class="post-title">When the Pace Feels Wrong — Trust the Process Anyway</a>
+          <p class="post-meta">Jan 18, 2026 · Faith &amp; Life</p>
+          <p class="post-excerpt">Some seasons are slow on purpose. Here's what training for a marathon taught me about trusting God's timing in business.</p>
+        </article>
+        <article class="post-item">
+          <a href="blog-post.html" class="post-title">The Simplest Personal Brand Advice I've Ever Given</a>
+          <p class="post-meta">Dec 28, 2025 · Marketing</p>
+          <p class="post-excerpt">You don't need a niche, a logo, or a content calendar. You need one thing: a clear point of view you can repeat for years.</p>
+        </article>
+        <article class="post-item">
+          <a href="blog-post.html" class="post-title">A Year of Running the Long Race</a>
+          <p class="post-meta">Dec 12, 2025 · Faith &amp; Life</p>
+          <p class="post-excerpt">Reflections on what it means to keep going — in miles, in faith, and in business — when the finish line isn't visible yet.</p>
+        </article>
+      </div>
+      <a href="blog.html" class="view-all">All posts →</a>
+    </section>
+  </div>
+
+  <!-- Work with me -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <p class="section-label">Let's work together</p>
+      <h2>Work with me</h2>
+      <ul class="work-list">
+        <li>Personal brand strategy — finding your voice and building an audience that trusts you.</li>
+        <li>Content marketing — turning your ideas into writing that actually moves people.</li>
+        <li>Business growth consulting — practical, no-fluff guidance for solopreneurs and small teams.</li>
+      </ul>
+      <a href="work.html" class="btn btn-primary">See how I can help</a>
+      <p class="contact-aside">Or find me on <a href="#">Instagram @lukehackslife</a> and <a href="#">YouTube</a>.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <span>© 2026 Luke Chang</span>
+      <div class="footer-links">
+        <a href="#">Instagram</a>
+        <a href="#">YouTube</a>
+        <a href="mailto:luke@lukehackslife.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

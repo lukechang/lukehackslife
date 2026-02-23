@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Photos — Luke Chang</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .filter-bar {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin: 32px 0 0;
+    }
+    .filter-btn {
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 500;
+      border: 1.5px solid var(--border);
+      background: transparent;
+      color: var(--ink-muted);
+      cursor: pointer;
+      transition: all 0.15s;
+      font-family: var(--font-body);
+    }
+    .filter-btn:hover, .filter-btn.active {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: var(--accent-light);
+    }
+
+    .photo-section { padding: 48px 0; border-top: 1px solid var(--border); }
+    .photo-section:first-of-type { border-top: none; }
+
+    .photo-section-title {
+      font-family: var(--font-head);
+      font-size: 18px; font-weight: 600;
+      letter-spacing: -0.01em;
+      color: var(--ink); margin-bottom: 4px;
+    }
+    .photo-section-sub {
+      font-size: 14px; color: var(--ink-muted); margin-bottom: 20px;
+    }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    .photo-grid.wide { grid-template-columns: repeat(2, 1fr); }
+
+    .photo-item {
+      aspect-ratio: 1 / 1;
+      border-radius: 6px;
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      position: relative;
+    }
+    .photo-item.wide-item { grid-column: span 2; aspect-ratio: 2 / 1; }
+    .photo-item.tall-item { grid-row: span 2; aspect-ratio: unset; }
+
+    .photo-placeholder {
+      width: 100%; height: 100%; min-height: 140px;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 6px; color: var(--ink-muted); font-size: 12px;
+    }
+    .photo-placeholder .icon { font-size: 26px; opacity: 0.35; }
+
+    .photo-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(transparent 50%, rgba(28,20,16,0.6));
+      opacity: 0; transition: opacity 0.2s;
+      display: flex; align-items: flex-end; padding: 12px;
+    }
+    .photo-item:hover .photo-overlay { opacity: 1; }
+    .photo-overlay span {
+      color: #fff; font-size: 12px; line-height: 1.4;
+    }
+
+    .photo-note {
+      margin-top: 16px; font-size: 13px; color: var(--ink-muted);
+    }
+
+    @media (max-width: 620px) {
+      .photo-grid { grid-template-columns: repeat(2, 1fr); }
+      .photo-item.wide-item { grid-column: span 1; aspect-ratio: 1 / 1; }
+      .photo-item.tall-item { grid-row: span 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo">Luke Chang</a>
+      <nav>
+        <a href="now.html">Now</a>
+        <a href="photos.html" class="active">Photos</a>
+        <a href="projects.html">Projects</a>
+        <a href="blog.html">Blog</a>
+        <a href="work.html">Work with me</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="page-header">
+      <a href="index.html" class="back-link">← Back home</a>
+      <p class="section-label fade-1">Life in frames</p>
+      <h1 class="page-title fade-2">Photos</h1>
+      <p class="page-subtitle fade-3">A visual journal of running, faith, mornings, and the slow work of building a life on purpose.</p>
+      <div class="filter-bar fade-4">
+        <button class="filter-btn active">All</button>
+        <button class="filter-btn">Running</button>
+        <button class="filter-btn">Faith</button>
+        <button class="filter-btn">Work</button>
+        <button class="filter-btn">Life</button>
+      </div>
+    </div>
+
+    <!-- Running -->
+    <section class="photo-section">
+      <p class="photo-section-title">On the road</p>
+      <p class="photo-section-sub">Marathon training — Fairfax, VA and wherever the miles take me.</p>
+      <div class="photo-grid">
+        <div class="photo-item tall-item">
+          <div class="photo-placeholder"><span class="icon">🏃</span><span>Race day</span></div>
+          <div class="photo-overlay"><span>Race morning — the best kind of nervous.</span></div>
+        </div>
+        <div class="photo-item">
+          <div class="photo-placeholder"><span class="icon">🌅</span><span>Pre-dawn miles</span></div>
+          <div class="photo-overlay"><span>5:30am, still dark.</span></div>
+        </div>
+        <div class="photo-item">
+          <div class="photo-placeholder"><span class="icon">🛤️</span><span>The trail</span></div>
+          <div class="photo-overlay"><span>My favorite 10-mile loop.</span></div>
+        </div>
+        <div class="photo-item wide-item">
+          <div class="photo-placeholder"><span class="icon">🏅</span><span>Finish line</span></div>
+          <div class="photo-overlay"><span>Every finish line looks the same — beautiful.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Faith & Morning -->
+    <section class="photo-section">
+      <p class="photo-section-title">Morning routine</p>
+      <p class="photo-section-sub">The hours before the world wakes up are sacred to me.</p>
+      <div class="photo-grid">
+        <div class="photo-item">
+          <div class="photo-placeholder"><span class="icon">☕</span><span>Coffee</span></div>
+          <div class="photo-overlay"><span>First cup, before anything else.</span></div>
+        </div>
+        <div class="photo-item">
+          <div class="photo-placeholder"><span class="icon">📖</span><span>Scripture</span></div>
+          <div class="photo-overlay"><span>John this season. Going slowly.</span></div>
+        </div>
+        <div class="photo-item">
+          <div class="photo-placeholder"><span class="icon">✍️</span><span>Journaling</span></div>
+          <div class="photo-overlay"><span>Three pages, every morning.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work -->
+    <section class="photo-section">
+      <p class="photo-section-title">The work</p>
+      <p class="photo-section-sub">Building in public, one intentional day at a time.</p>
+      <div class="photo-grid wide">
+        <div class="photo-item">
+          <div class="photo-placeholder"><span class="icon">💻</span><span>Desk setup</span></div>
+          <div class="photo-overlay"><span>Where most of it gets made.</span></div>
+        </div>
+        <div class="photo-item">
+          <div class="photo-placeholder"><span class="icon">🎙️</span><span>Recording</span></div>
+          <div class="photo-overlay"><span>YouTube, podcast, voice memos.</span></div>
+        </div>
+        <div class="photo-item">
+          <div class="photo-placeholder"><span class="icon">🗺️</span><span>Whiteboard</span></div>
+          <div class="photo-overlay"><span>Strategy on a Saturday morning.</span></div>
+        </div>
+        <div class="photo-item">
+          <div class="photo-placeholder"><span class="icon">📬</span><span>Newsletter day</span></div>
+          <div class="photo-overlay"><span>Send days feel like race days.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <p class="photo-note" style="padding-bottom: 64px;">
+      To add your own photos, replace each <code>.photo-placeholder</code> block with <code>&lt;img src="your-photo.jpg" style="width:100%;height:100%;object-fit:cover;"&gt;</code>.<br/>
+      More moments on <a href="#">Instagram @lukehackslife</a>.
+    </p>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <span>© 2026 Luke Chang</span>
+      <div class="footer-links">
+        <a href="#">Instagram</a>
+        <a href="#">YouTube</a>
+        <a href="mailto:luke@lukehackslife.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
+  </script>
+
+</body>
+</html>

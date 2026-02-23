@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Now — Luke Chang</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .now-body { padding: 56px 0; }
+
+    .now-entry {
+      border-left: 2px solid var(--border);
+      padding-left: 28px;
+      margin-bottom: 48px;
+      position: relative;
+    }
+    .now-entry::before {
+      content: '';
+      width: 10px; height: 10px;
+      background: var(--accent);
+      border-radius: 50%;
+      position: absolute;
+      left: -6px; top: 6px;
+    }
+
+    .now-entry-category {
+      font-size: 11px; font-weight: 500;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--accent); margin-bottom: 8px;
+    }
+
+    .now-entry h3 {
+      font-family: var(--font-head);
+      font-size: 20px; font-weight: 600;
+      letter-spacing: -0.01em;
+      color: var(--ink); margin-bottom: 12px;
+    }
+
+    .now-entry p {
+      font-size: 16px; color: var(--ink-muted);
+      line-height: 1.75; margin-bottom: 10px;
+    }
+
+    .now-entry p:last-child { margin-bottom: 0; }
+
+    .now-meta {
+      font-size: 13px; color: var(--border);
+      margin-top: 32px; padding-top: 24px;
+      border-top: 1px solid var(--border);
+      font-style: italic;
+    }
+
+    .reading-list { list-style: none; margin-top: 8px; display: flex; flex-direction: column; gap: 8px; }
+    .reading-list li { font-size: 15px; color: var(--ink-muted); padding-left: 16px; position: relative; }
+    .reading-list li::before { content: '→'; position: absolute; left: 0; color: var(--accent); }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo">Luke Chang</a>
+      <nav>
+        <a href="now.html" class="active">Now</a>
+        <a href="photos.html">Photos</a>
+        <a href="projects.html">Projects</a>
+        <a href="blog.html">Blog</a>
+        <a href="work.html">Work with me</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="page-header">
+      <a href="index.html" class="back-link">← Back home</a>
+      <p class="section-label fade-1">Present tense</p>
+      <h1 class="page-title fade-2">What I'm doing now</h1>
+      <p class="page-subtitle fade-3">A snapshot of where my time, energy, and attention are going. Inspired by Derek Sivers' <a href="https://nownownow.com" target="_blank">now page</a> movement.</p>
+    </div>
+
+    <section class="now-body" style="border-top:none;">
+
+      <div class="now-entry fade-2">
+        <p class="now-entry-category">Business</p>
+        <h3>Running LukeHacksLife LLC</h3>
+        <p>My consulting practice is in full swing. Based in Fairfax, VA, I'm working with a small roster of clients — solopreneurs and small business owners — helping them get clear on their brand and show up consistently online.</p>
+        <p>My focus right now is building systems that don't rely on me being "on" all the time. Less hustle, more architecture.</p>
+      </div>
+
+      <div class="now-entry fade-3">
+        <p class="now-entry-category">Content & Writing</p>
+        <h3>Publishing weekly on the blog and newsletter</h3>
+        <p>I'm committed to writing at least one piece per week — either a blog post here or an email to my list. The discipline of showing up in writing is teaching me more about clarity than anything else.</p>
+        <p>This season I'm writing a lot about the intersection of faith and business — what it means to build something without making it your identity.</p>
+      </div>
+
+      <div class="now-entry fade-3">
+        <p class="now-entry-category">Running</p>
+        <h3>Training for my next marathon</h3>
+        <p>I'm in the middle of a 16-week training block. Long runs on Saturdays, easy miles during the week. It's humbling — the best discipline I know for staying grounded.</p>
+        <p>There's something about putting miles in when no one is watching that quietly shapes everything else.</p>
+      </div>
+
+      <div class="now-entry fade-4">
+        <p class="now-entry-category">Faith</p>
+        <h3>Slowing down to go deep</h3>
+        <p>I'm in a season of less noise and more roots. Attending my local church consistently, leading a small men's group, and spending more mornings in silence before the day starts.</p>
+        <p>I've been convicted lately that productivity without presence is just busy-ness dressed up.</p>
+      </div>
+
+      <div class="now-entry fade-4">
+        <p class="now-entry-category">Reading</p>
+        <h3>Current stack</h3>
+        <ul class="reading-list">
+          <li><em>The Ruthless Elimination of Hurry</em> — John Mark Comer</li>
+          <li><em>Building a StoryBrand</em> — Donald Miller (re-read)</li>
+          <li><em>Born to Run</em> — Christopher McDougall</li>
+          <li>The Gospel of John, slowly</li>
+        </ul>
+      </div>
+
+      <p class="now-meta">Last updated: February 2026 · Fairfax, VA</p>
+    </section>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <span>© 2026 Luke Chang</span>
+      <div class="footer-links">
+        <a href="#">Instagram</a>
+        <a href="#">YouTube</a>
+        <a href="mailto:luke@lukehackslife.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
